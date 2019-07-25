@@ -1,0 +1,25 @@
+{
+  "name": "CopyTwitterImagePath",
+  "version": "1.0",
+  "description": "Copy new Twitter image direct path!",
+  "manifest_version": 2,
+  "permissions": [
+    "contextMenus",
+    "activeTab",
+    "clipboardRead",
+    "clipboardWrite",
+    "https://twitter.com/*"
+  ],
+  "background": {
+    "scripts": ["event.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://twitter.com/*"],
+      "all_frames": true,
+      "match_about_blank": true,
+      "js": ["content_script.js"]
+    }
+  ]
+}
